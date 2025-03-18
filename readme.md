@@ -87,6 +87,7 @@ http://localhost:3000/?llm=google
 - **Framework:** [![NextJS](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org)
 - **UI Components:** [![Shadcn](https://img.shields.io/badge/Shadcn-000000?style=for-the-badge&logo=shadcn&logoColor=white)](https://ui.shadcn.com/)
 - **Styling:** [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+- **Design Tool:** [![V0.dev](https://img.shields.io/badge/V0.dev-FF4785?style=for-the-badge&logo=v0&logoColor=white)](https://v0.dev/)
 
 ### 🛠️ Backend
 - **Runtime:** [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
