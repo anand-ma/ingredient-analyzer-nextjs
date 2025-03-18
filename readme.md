@@ -83,14 +83,27 @@ http://localhost:3000/?llm=google
 
 ## Technologies Used
 
-- [![Next.js](https://nextjs.org/static/favicon/favicon-32x32.png) Next.js](https://nextjs.org/): A React framework for building web applications.
-- [![Tailwind CSS](https://tailwindcss.com/favicon-32x32.png) Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework for rapid UI development.
-- [![Vercel AI SDK](https://vercel.com/favicon.ico) Vercel AI SDK](https://vercel.com/docs/ai/vercel-ai-sdk): A toolkit for integrating AI models into applications.
-  - [![Together AI](https://together.ai/favicon.ico) Together AI](https://together.ai/): An AI platform for collaborative intelligence.
-  - [![OpenAI](https://openai.com/favicon.ico) OpenAI](https://openai.com/): An AI research lab and deployment company.
-  - [![Google AI](https://ai.google/favicon.ico) Google AI](https://ai.google/): Google's AI and machine learning research division.
-  - [![Groq](https://groq.com/favicon.ico) Groq](https://groq.com/): A company specializing in AI accelerators and hardware.
-- [![Zod](https://zod.dev/favicon.ico) Zod](https://zod.dev/): A TypeScript-first schema declaration and validation library.
+### 🚀 Frontend
+- **Framework:** [![NextJS](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org)
+- **UI Components:** [![Shadcn](https://img.shields.io/badge/Shadcn-000000?style=for-the-badge&logo=shadcn&logoColor=white)](https://ui.shadcn.com/)
+- **Styling:** [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+
+### 🛠️ Backend
+- **Runtime:** [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+- **Framework:** [![Next.js API Routes](https://img.shields.io/badge/Next.js_API_Routes-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/docs/api-routes/introduction)
+- **Type Safety:** [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+- **Validation:** [![Zod](https://img.shields.io/badge/Zod-3068B7?style=for-the-badge&logo=zod&logoColor=white)](https://zod.dev/)
+
+### 🤖 AI Development
+- **Code Assistant:** [![GitHub Copilot + VSCode](https://img.shields.io/badge/GitHub_Copilot_+_VSCode-24292e?style=for-the-badge&logo=github&logoColor=white)](https://github.com/features/copilot) [![Cursor](https://img.shields.io/badge/Cursor_IDE-000000?style=for-the-badge&logo=cursor&logoColor=white)](https://cursor.sh/)
+- **API Integration:** [![Vercel AI SDK](https://img.shields.io/badge/Vercel_AI_SDK-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://sdk.vercel.ai/)
+
+### 🧠 AI Models
+- **OpenAI:** [![OpenAI](https://img.shields.io/badge/OpenAI_GPT--4V-412991?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com/gpt-4)
+- **Google Gemini:** [![Google Cloud Vision](https://img.shields.io/badge/Google_Cloud_Vision-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/vision)
+- **TogetherAI:** [![Together AI](https://img.shields.io/badge/Together_AI-3B82F6?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDJMMiA3djEwbDEwIDUgMTAtNVY3TDEyIDJ6IiBmaWxsPSIjZmZmIi8+PC9zdmc+)](https://www.together.ai/)
+- **Groq:** [![Groq](https://img.shields.io/badge/Groq_LLM-000000?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDJhMTAgMTAgMCAxIDAgMTAgMTBoLTEwdi0xMHoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=)](https://www.groq.com/)
+
 
 ## Contributing
 
