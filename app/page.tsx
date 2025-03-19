@@ -98,6 +98,35 @@ export default function Home() {
     }
   }
 
+  const generatePDF = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/generate-pdf", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ingredients }),
+      });
+  
+      console.dir("Response:", response);
+      if (!response.ok) {
+        throw new Error("Failed to generate PDF");
+      }
+  
+      // Get the PDF blob
+      const blob = await response.blob();
+      
+      // Create a URL for the blob
+      const url = window.URL.createObjectURL(blob);
+      
+      // Open the PDF in a new tab
+      window.open(url);
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+      setError("Failed to generate PDF report");
+    }
+  };
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 md:p-24 bg-green-50">
       <div className="w-full max-w-4xl">
@@ -204,7 +233,14 @@ export default function Home() {
                 </Table>
               </div>
             </CardContent>
-            <CardFooter className="bg-green-50/50 text-xs text-green-700 italic">
+            <CardFooter className="bg-green-50/50 text-xs text-green-700 italic flex justify-between items-center">
+              <Button
+                onClick={generatePDF}
+                disabled={ingredients.length === 0}
+                className="bg-green-600 hover:bg-green-700 text-white"
+              >
+                Generate PDF Report
+              </Button>
               <p>Note: This analysis is based on AI interpretation and should not be considered medical advice.</p>
             </CardFooter>
           </Card>
