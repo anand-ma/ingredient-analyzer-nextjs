@@ -141,7 +141,7 @@ export async function POST(req: Request) {
         default:
           ingredients = await analyzeImageGoogle(image);
       }
-      console.dir(ingredients);
+      // console.dir(ingredients);
     } catch (error: any) {
       console.error("API Error:", error.response?.data || error.message);
     }

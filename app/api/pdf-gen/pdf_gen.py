@@ -4,6 +4,7 @@ from reportlab.lib import colors
 from reportlab.lib.units import inch
 from reportlab.lib.styles import getSampleStyleSheet
 import os
+import uuid
 
 def generate_pdf(raw_data):
     # Define custom pastel green colors
@@ -35,7 +36,8 @@ def generate_pdf(raw_data):
         os.makedirs(output_dir)
 
     # Create the PDF document
-    pdf_path = os.path.join(output_dir, "ingredients_analysis.pdf")
+    random_filename = f"ingredients_analysis_{uuid.uuid4().hex[:8]}.pdf"
+    pdf_path = os.path.join(output_dir, random_filename)
     doc = SimpleDocTemplate(
         pdf_path,
         pagesize=letter,
