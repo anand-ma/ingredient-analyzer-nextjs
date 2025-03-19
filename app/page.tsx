@@ -100,7 +100,7 @@ export default function Home() {
 
   const generatePDF = async () => {
     try {
-      const response = await fetch("http://localhost:8000/generate-pdf", {
+      const response = await fetch("/api/pdf-gen/generate-pdf", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
