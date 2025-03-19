@@ -34,7 +34,7 @@ async def create_pdf(request: IngredientsRequest):
       print("Received request:", request)
       
       # Convert ingredients to the format expected by generate_pdf
-      raw_data = [["Ingredient", "Common Name/Botanical Identity", "Potential Side Effects/Harmful Effects"]]
+      raw_data = [["Ingredient", "Common Name / Botanical Identity", "Potential Side Effects / Harmful Effects"]]
       for item in request.ingredients:
         raw_data.append([
           item.ingredient,

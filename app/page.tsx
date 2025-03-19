@@ -108,7 +108,7 @@ export default function Home() {
         body: JSON.stringify({ ingredients }),
       });
   
-      console.dir("Response:", response);
+      // console.dir("Response:", response);
       if (!response.ok) {
         throw new Error("Failed to generate PDF");
       }
@@ -241,7 +241,7 @@ export default function Home() {
               >
                 Generate PDF Report
               </Button>
-              <p>Note: This analysis is based on AI interpretation and should not be considered medical advice.</p>
+                <p className="ml-4">Note: This analysis is based on AI interpretation and should not be considered medical advice.</p>
             </CardFooter>
           </Card>
         )}
