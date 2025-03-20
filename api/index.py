@@ -1,4 +1,5 @@
 # to run: uvicorn route:app --reload --port 8000
+# this file is the main entry point for the API and should be named index.py
 
 from fastapi import FastAPI, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
