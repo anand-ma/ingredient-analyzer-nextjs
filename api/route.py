@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from typing import List
-from pdf_gen import generate_pdf
+from .utils.pdf_gen import generate_pdf
 import os
 
 app = FastAPI()
@@ -26,7 +26,7 @@ class Ingredient(BaseModel):
 class IngredientsRequest(BaseModel):
     ingredients: List[Ingredient]
 
-@app.post("/generate-pdf")
+@app.post("/api/generate-pdf")
 async def create_pdf(request: IngredientsRequest, background_tasks: BackgroundTasks):
     try:
         # Convert ingredients to the expected format for generate_pdf

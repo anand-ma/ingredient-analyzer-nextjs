@@ -133,7 +133,7 @@ export async function POST(req: Request) {
           ingredients = await analyzeImageOpenAI(image);
           break;
         case 'google':
-          ingredients = await analyzeImageGoogle(image);
+          // ingredients = await analyzeImageGoogle(image);
           break;
         case 'groq':
           ingredients = await analyzeImageGroq(image);
