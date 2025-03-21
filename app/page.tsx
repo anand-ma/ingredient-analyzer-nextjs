@@ -108,19 +108,20 @@ export default function Home() {
         body: JSON.stringify({ ingredients }),
       });
   
-      // console.dir("Response:", response);
       if (!response.ok) {
         throw new Error("Failed to generate PDF");
       }
   
-      // Get the PDF blob
       const blob = await response.blob();
-      
-      // Create a URL for the blob
       const url = window.URL.createObjectURL(blob);
-      
-      // Open the PDF in a new tab
-      window.open(url);
+      const link = document.createElement('a');
+      Object.assign(link, { href: url, download: 'ingredient-analysis.pdf' });
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+      // or window.open(url, '_blank');
+
     } catch (error) {
       console.error("Error generating PDF:", error);
       setError("Failed to generate PDF report");
