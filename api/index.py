@@ -1,6 +1,7 @@
 # to run: uvicorn route:app --reload --port 8000
 # this file is the main entry point for the API and should be named index.py
 
+import logging
 from fastapi import FastAPI, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
@@ -9,15 +10,11 @@ from typing import List
 from .utils.pdf_gen import generate_pdf
 import os
 
-app = FastAPI()
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+app = FastAPI()
 
 class Ingredient(BaseModel):
     ingredient: str
@@ -33,16 +30,20 @@ async def create_pdf(request: IngredientsRequest, background_tasks: BackgroundTa
         # Convert ingredients to the expected format for generate_pdf
         raw_data = [["Ingredient", "Common Name / Botanical Identity", "Potential Side Effects / Harmful Effects"]]
         for item in request.ingredients:
+            logger.debug(f"Processing ingredient: {item.ingredient}")
             raw_data.append([
                 item.ingredient,
                 item.common_name,
                 item.side_effects,
             ])
+            
         # Generate PDF
         pdf_path = generate_pdf(raw_data)
+        logger.debug(f"PDF generated successfully at path: {pdf_path}")
         
         # Schedule deletion of the temporary PDF after the response is sent
         background_tasks.add_task(os.remove, pdf_path)
+        logger.debug("Scheduled PDF deletion for after response")
         
         # Return the PDF file as response
         return FileResponse(
@@ -53,4 +54,5 @@ async def create_pdf(request: IngredientsRequest, background_tasks: BackgroundTa
         )
         
     except Exception as e:
+        logger.error(f"Error generating PDF: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))

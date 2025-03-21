@@ -1,3 +1,4 @@
+import logging
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Spacer, Paragraph
 from reportlab.lib import colors
@@ -6,7 +7,13 @@ from reportlab.lib.styles import getSampleStyleSheet
 import os
 import uuid
 
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
 def generate_pdf(raw_data):
+    logger.debug(f"Starting PDF generation with {len(raw_data)} rows of data")
+    
     # Define custom pastel green colors
     header_green = colors.Color(0.45, 0.65, 0.45)
     row_green1 = colors.Color(0.85, 0.95, 0.85)
@@ -31,13 +38,15 @@ def generate_pdf(raw_data):
     col_widths = [1.8 * inch, 2.4 * inch, 3.0 * inch]
 
     # Create output directory if it doesn't exist
-    output_dir = "temp"
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+
+    output_dir = "/tmp"
+    os.makedirs(output_dir, exist_ok=True)
 
     # Create the PDF document
     random_filename = f"ingredients_analysis_{uuid.uuid4().hex[:8]}.pdf"
     pdf_path = os.path.join(output_dir, random_filename)
+    logger.debug(f"Generated PDF path: {pdf_path}")
+    
     doc = SimpleDocTemplate(
         pdf_path,
         pagesize=letter,
