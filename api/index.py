@@ -50,7 +50,8 @@ async def create_pdf(request: IngredientsRequest, background_tasks: BackgroundTa
             pdf_path,
             media_type="application/pdf",
             filename="ingredients_analysis.pdf",
-            background=background_tasks
+            background=background_tasks,
+            headers={"Content-Disposition": "attachment; filename=ingredients_analysis.pdf"}
         )
         
     except Exception as e:
