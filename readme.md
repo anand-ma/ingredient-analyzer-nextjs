@@ -2,6 +2,8 @@
 
 This is a Next.js application that analyzes images of product ingredients using various AI models. The app allows users to upload an image of product ingredients and receive a detailed analysis of each ingredient, including its scientific name, common Indian name, and potential side effects. The results can be exported as PDF.
 
+🚀 **Live Demo:** [https://ingredient-analyzer-nextjs.vercel.app/](https://ingredient-analyzer-nextjs.vercel.app/)
+
 ## Features
 
 - Upload an image of product ingredients
@@ -35,6 +37,7 @@ This is a Next.js application that analyzes images of product ingredients using 
 
 - Node.js (v14 or later)
 - npm (v6 or later)
+- Python (v3.11.11 or later)
 
 ### Installation
 
@@ -140,6 +143,7 @@ Example usage:
 - **Framework:** [![Next.js API Routes](https://img.shields.io/badge/Next.js_API_Routes-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/docs/api-routes/introduction)
 - **Type Safety:** [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 - **Validation:** [![Zod](https://img.shields.io/badge/Zod-3068B7?style=for-the-badge&logo=zod&logoColor=white)](https://zod.dev/)
+- **Python:** [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 
 ### 🤖 AI Development
 - **Code Assistant:** [![GitHub Copilot + VSCode](https://img.shields.io/badge/GitHub_Copilot_+_VSCode-24292e?style=for-the-badge&logo=github&logoColor=white)](https://github.com/features/copilot) [![Cursor](https://img.shields.io/badge/Cursor_IDE-000000?style=for-the-badge&logo=cursor&logoColor=white)](https://cursor.sh/)
