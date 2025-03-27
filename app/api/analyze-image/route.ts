@@ -68,7 +68,7 @@ async function analyzeImageGoogle(image: File) {
   const base64Image = Buffer.from(bytes).toString("base64");
 
   const { object } = await generateObject({
-    model: google("gemini-2.5-pro"),
+    model: google("gemini-2.5-pro-exp-03-25"),
     messages: [
       {
         role: "system",
