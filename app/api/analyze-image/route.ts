@@ -78,7 +78,7 @@ async function analyzeImageGoogle(image: File) {
       {
         role: "user",
         content: [
-          { type: "text", text: "Analyze this image and identify all ingredients. For each ingredient, provide its common indian name, and potential side effects or harmful effects. Format the response as a JSON array of objects with the properties: ingredient, common_name, and side_effects." },
+          { type: "text", text: "Analyze this image and identify all ingredients. For each ingredient, provide its common indian english name , and potential side effects or harmful effects. Do not use hindi name for common_name. Use only english or tamil name for common_name. Format the response as a JSON array of objects with the properties: ingredient, common_name, and side_effects." },
           { type: "image", image: base64Image }
         ]
       },

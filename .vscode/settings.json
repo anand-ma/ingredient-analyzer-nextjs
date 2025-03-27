@@ -1,4 +1,8 @@
 {
   "editor.tabSize": 2,
-  "terminal.integrated.scrollback": 2000
+  "terminal.integrated.scrollback": 2000,
+  "editor.wordWrap": "on",
+  "editor.wrappingStrategy": "simple",
+  "notebook.output.wordWrap": true,
+  "chat.editor.wordWrap": "on"
 }
