@@ -101,7 +101,8 @@ pnpm start
 
   - `togetherai`: Uses the Together AI model
   - `openai`: Uses the OpenAI model
-  - `google`: Uses the Google model (default)
+  - `google`: Uses the Google model - gemini-2.0-flash-exp (default)
+  - `google-pro`: Uses gemini gemini-2.5-pro-exp-03-25 model
   - `groq`: Uses the Groq model
 
 Example usage:
