@@ -108,7 +108,7 @@ async function analyzeImageGroq(image: File) {
   // console.log("Analysis result:", text);
   return JSON.parse(text);
 }
-
+export const maxDuration = 15; 
 export async function POST(req: Request) {
   console.log("API route called");
 
