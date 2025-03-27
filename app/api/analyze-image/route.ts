@@ -63,12 +63,17 @@ async function analyzeImageOpenAI(image: File) {
   return object.ingredients;
 }
 
-async function analyzeImageGoogle(image: File) {
+async function analyzeImageGoogle(image: File, modelVar: string = "flash") {
   const bytes = await image.arrayBuffer();
   const base64Image = Buffer.from(bytes).toString("base64");
 
+  let model = "gemini-2.0-flash-exp";
+  if (modelVar === "pro") {
+    model = "gemini-2.5-pro-exp-03-25";
+  }
+   
   const { object } = await generateObject({
-    model: google("gemini-2.5-pro-exp-03-25"),
+    model:  google(model),
     messages: [
       {
         role: "system",
@@ -134,6 +139,9 @@ export async function POST(req: Request) {
           break;
         case 'google':
           ingredients = await analyzeImageGoogle(image);
+          break;
+        case 'google-pro':
+          ingredients = await analyzeImageGoogle(image, "pro");
           break;
         case 'groq':
           ingredients = await analyzeImageGroq(image);
